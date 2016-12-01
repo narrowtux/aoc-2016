@@ -11,10 +11,10 @@ defmodule Aoc2016.Mixfile do
   end
   
   def application do
-    [applications: [:logger]]
+    [applications: [:logger, :multidef]]
   end
 
   defp deps do
-    []
+    [{:multidef, "~> 0.2.1"}]
   end
 end

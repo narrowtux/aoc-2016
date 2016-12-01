@@ -7,6 +7,7 @@ defmodule Narrowtux.Aoc2016.Day do
     quote do
       @behaviour unquote(__MODULE__)
       import unquote(__MODULE__)
+      import MultiDef
 
       def day() do
         @day
