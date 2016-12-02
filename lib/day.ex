@@ -1,4 +1,4 @@
-defmodule Narrowtux.Aoc2016.Day do
+defmodule Day do
   @callback day() :: number
   @callback part_1() :: {:ok, term}
   @callback part_2(context :: term) :: {:ok, term}

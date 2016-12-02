@@ -1,6 +1,6 @@
-defmodule Narrowtux.Aoc2016.Day1 do
+defmodule Day1 do
   @day 1
-  use Narrowtux.Aoc2016.Day
+  use Day
 
   def part_1 do
     {:ok, input} = get_input()
