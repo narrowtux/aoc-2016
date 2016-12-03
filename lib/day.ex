@@ -27,6 +27,11 @@ defmodule Day do
         |> File.read()
       end
 
+      def get_input!() do
+        {:ok, input} = get_input()
+        input
+      end
+
       defoverridable(day: 0, get_input: 0, get_input_stream: 0, get_input_file: 0)
     end
   end
