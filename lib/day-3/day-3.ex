@@ -30,11 +30,11 @@ defmodule Day3 do
     |> part_1
   end
 
-  def valid_triangle?([a, b, c]) do
-    a + b > c 
-    and b + c > a
-    and c + a > b
-  end
+  def valid_triangle?([a, b, c]) when a + b > c 
+                                 and b + c > a
+                                 and c + a > b, do: true
+
+  def valid_triangle?(_), do: false
 
   def process_input(input) do
     input
