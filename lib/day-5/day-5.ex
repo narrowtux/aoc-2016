@@ -52,7 +52,7 @@ defmodule Day5 do
   def get_hashes(input) do
     Stream.iterate(0, &(&1 + 1))
     |> Flow.from_enumerable
-    |> Flow.map(&("#{input}#{&1}"))
+    |> Flow.map(&([input, Integer.to_string(&1)]))
     |> Flow.map(&:crypto.hash(:md5, &1))
     |> Flow.map(&Base.encode16(&1, case: :lower))
     |> Flow.filter(fn 
