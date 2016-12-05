@@ -54,6 +54,7 @@ defmodule Day5 do
     |> Flow.from_enumerable
     |> Flow.map(&([input, Integer.to_string(&1)]))
     |> Flow.map(&:crypto.hash(:md5, &1))
+    |> Flow.map(fn << keep::size(4)-binary, _::binary >> -> keep end)
     |> Flow.map(&Base.encode16(&1, case: :lower))
     |> Flow.filter(fn 
       << "00000"::binary, rest::binary >> -> 
