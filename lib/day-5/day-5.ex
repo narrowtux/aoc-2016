@@ -1,5 +1,7 @@
 defmodule Day5 do
+  @day 5
   use Day
+  alias Experimental.Flow
 
   def part_1 do
     get_input!
@@ -15,6 +17,11 @@ defmodule Day5 do
       _ -> nil
     end)
     |> :erlang.iolist_to_binary
+  end
+
+  def part_2() do
+    get_input!
+    |> part_2()
   end
   
   def part_2(input) do
@@ -44,10 +51,11 @@ defmodule Day5 do
 
   def get_hashes(input) do
     Stream.iterate(0, &(&1 + 1))
-    |> Stream.map(&("#{input}#{&1}"))
-    |> Stream.map(&:crypto.hash(:md5, &1))
-    |> Stream.map(&Base.encode16(&1, case: :lower))
-    |> Stream.filter(fn 
+    |> Flow.from_enumerable
+    |> Flow.map(&("#{input}#{&1}"))
+    |> Flow.map(&:crypto.hash(:md5, &1))
+    |> Flow.map(&Base.encode16(&1, case: :lower))
+    |> Flow.filter(fn 
       << "00000"::binary, rest::binary >> -> 
         IO.puts ["Found ", rest]
         true

@@ -15,6 +15,9 @@ defmodule Aoc2016.Mixfile do
   end
 
   defp deps do
-    [{:multidef, "~> 0.2.1"}]
+    [
+      {:multidef, "~> 0.2.1"},
+      {:gen_stage, "~> 0.4"}
+    ]
   end
 end

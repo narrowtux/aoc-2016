@@ -1,1 +1,2 @@
-%{"multidef": {:hex, :multidef, "0.2.1", "69fc1d9991b2221cab03b86dd3d04c89e7b273bd731eff531505fd392aed199e", [:mix], []}}
+%{"gen_stage": {:hex, :gen_stage, "0.9.0", "9daf0b5ae224405e0456b7df5a282a9a958176cdb9b963811ca38140e7e1b3c4", [:mix], []},
+  "multidef": {:hex, :multidef, "0.2.1", "69fc1d9991b2221cab03b86dd3d04c89e7b273bd731eff531505fd392aed199e", [:mix], []}}
