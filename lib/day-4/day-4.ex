@@ -46,11 +46,13 @@ defmodule Day4 do
     |> Enum.group_by(&(&1))
     |> Map.values
     |> Enum.map(fn [first | _] = list -> {first, length(list)} end)
-    |> Enum.sort_by(&(&1), fn
-      {l1, s}, {l2, s} -> l1 < l2
-      {_, s1}, {_, s2} -> s1 > s2
-    end)
+    |> Enum.sort_by(&(&1), &sort_for_checksum/2)
     {payload, sector, checksum}
+  end
+
+  mdef sort_for_checksum do
+    {l1, s}, {l2, s} -> l1 < l2
+    {_, s1}, {_, s2} -> s1 > s2
   end
   
   def checksum({payload, sector, checksum}) do
