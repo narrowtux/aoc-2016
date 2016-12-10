@@ -78,10 +78,4 @@ defmodule Day10 do
 
     GenServer.cast(bot, instruction)
   end
-
-  def regex_to_pid(input) do
-    input
-    |> String.replace(" ", "_")
-    |> String.to_atom
-  end
 end
