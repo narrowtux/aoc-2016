@@ -17,7 +17,8 @@ defmodule Aoc2016.Mixfile do
   defp deps do
     [
       {:multidef, "~> 0.2.1"},
-      {:gen_stage, "~> 0.4"}
+      {:gen_stage, "~> 0.4"},
+      {:eastar, github: "narrowtux/eastar"}
     ]
   end
 end
